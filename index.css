@@ -1,0 +1,56 @@
+body{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.fill-size {
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  font-family: 'Fira Code Light', monospace;
+}
+
+#perfect {
+  background-image: url(assets/perfect.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(200%);
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+#perfect.active {
+  opacity: 1;
+  transition: none;
+}
+
+#click-text {
+  font-size: 6rem;
+  top: 0;
+}
+
+#click-title {
+  font-size: 6rem;
+  bottom: 0;
+}
+
+#click-target {
+  width: 400px;
+  height: 400px;
+  background-image: url(assets/note.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
