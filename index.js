@@ -34,14 +34,14 @@ let main = new Vue({
 		async sendClick() {
 			const clicksToSend = this.click - this.sentClick
 			if (!clicksToSend) return
-			const request = await req('http://localhost:6969/add/' + clicksToSend)
+			const request = await req('http://cloud.deemoharlos.space:6969/add/' + clicksToSend)
 			if (request.status === 200) {
 				this.sentClick = this.click
 				Cookies.set('sentClick', this.click)
 			}
 		},
 		async getTotal() {
-			const request = await req('http://localhost:6969/total', 'json')
+			const request = await req('http://cloud.deemoharlos.space:6969/total', 'json')
 			if (request.status === 200) {
 				const res = request.response
 				this.totalClicks = Number(res.totalClicks) || 0
