@@ -11,8 +11,8 @@ app.get('/add/:num', async (req, res) => {
 	console.log('New request!')
 	res.append('Access-Control-Allow-Origin', '*')
 
-	const num = Number(req.params.num) || 0
-	if (!num) res.status(400).send('Cannot be zero!')
+	const num = Math.min(Number(req.params.num) || 0, 1000)
+	if (num <= 0) return res.status(400).send('Invalid Number')
 	totalClicks += Number(num)
 	console.log('Current Clicks: ', totalClicks)
 	res.sendStatus(200)
