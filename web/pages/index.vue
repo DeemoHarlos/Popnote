@@ -56,12 +56,12 @@ export default Vue.extend({
     async sendClick() {
       const clicksToSend = this.click - this.sentClick
       if (!clicksToSend) return
-      await this.req('http://localhost:6969/add/' + clicksToSend)
+      await this.req('http://cloud.harlos.me:6969/add/' + clicksToSend)
       this.sentClick = this.click
       this.$cookies.set('sentClick', this.click)
     },
     async getTotal() {
-      const res = await this.req('http://localhost:6969/total')
+      const res = await this.req('http://cloud.harlos.me:6969/total')
       this.totalClicks = Number(res.totalClicks) || 0
       this.$cookies.set('totalClicks', this.totalClicks)
       this.totalAnim(this.totalClicksDisplay, this.totalClicks, this.totalUpdateInterval)
